@@ -1,4 +1,4 @@
-FROM 3dpro/base-image
+FROM 3dpro/base-debian
 MAINTAINER Kittipun Khantitrirat <boot191@gmail.com>
 
 ADD build-files /build-files
