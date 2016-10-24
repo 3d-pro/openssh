@@ -1,4 +1,4 @@
-# OpenSSH Image of Debian Jessie [![Build Status](https://travis-ci.org/3d-pro/openssh.svg?branch=master)](https://travis-ci.org/3d-pro/openssh)
+# OpenSSH Image of Debian Sid [![Build Status](https://travis-ci.org/3d-pro/openssh.svg?branch=master)](https://travis-ci.org/3d-pro/openssh)
 
 ## Required Docker Images
 - apt-cacher-ng
