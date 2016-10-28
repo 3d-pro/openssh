@@ -9,4 +9,4 @@ script:
    - docker push 3dpro/openssh
 
 after_success:
-   - ./trigger.sh
+   - ./trigger.sh $TRAVIS_TOKEN
