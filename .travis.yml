@@ -7,3 +7,6 @@ script:
    - docker run -d -p 3142:3142 --hostname apt-cacher-ng --name apt-cacher-ng 3dpro/apt-cacher-ng
    - docker build -t 3dpro/openssh .
    - docker push 3dpro/openssh
+
+after_success:
+   - ./trigger.sh
