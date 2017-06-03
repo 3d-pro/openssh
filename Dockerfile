@@ -1,5 +1,4 @@
 FROM 3dpro/base-debian
-MAINTAINER Kittipun Khantitrirat <boot191@gmail.com>
 
 ADD build-files /build-files
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
