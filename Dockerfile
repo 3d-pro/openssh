@@ -3,7 +3,7 @@ FROM 3dpro/base-debian
 ADD build-files /build-files
 RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
     apt-get update && \
-    apt-get install -t experimental -y sudo openssh-server vim git && \
+    apt-get install -y sudo openssh-server vim git && \
     sed -i "/env_reset/a \Defaults        env_keep+=SSH_AUTH_SOCK" /etc/sudoers && \
     sed -i 's/required     pam_loginuid.so/optional     pam_loginuid.so/g' /etc/pam.d/sshd && \
     echo 'export LC_ALL=en_US.UTF-8' > /root/.bash_profile && \
