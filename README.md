@@ -1,8 +1,7 @@
-# OpenSSH [![Build Status](https://travis-ci.org/3d-pro/openssh.svg?branch=master)](https://travis-ci.org/3d-pro/openssh)
+# OpenSSH [![Build Status](https://github.com/3d-pro/openssh/actions/workflows/docker-build.yaml/badge.svg)](https://github.com/3d-pro/openssh/actions)
 
 ## Required Docker Images
-- apt-cacher-ng
-- base
+- base-debian
 
 ## Build
 ```

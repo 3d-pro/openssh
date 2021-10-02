@@ -1,9 +1,8 @@
-FROM 3dpro/base-debian
+FROM 3dpro/base-debian:latest
 
 ADD build-files /build-files
-RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/11proxy && \
-    apt-get update && \
-    apt-get install -y sudo openssh-server vim git dnsutils telnet && \
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y openssh-server vim git && \
     sed -i "/env_reset/a \Defaults        env_keep+=SSH_AUTH_SOCK" /etc/sudoers && \
     sed -i 's/required     pam_loginuid.so/optional     pam_loginuid.so/g' /etc/pam.d/sshd && \
     echo 'export LC_ALL=en_US.UTF-8' > /root/.bash_profile && \
@@ -16,7 +15,7 @@ RUN echo 'Acquire::http::Proxy "http://172.17.0.1:3142";' > /etc/apt/apt.conf.d/
     chown root:root /start.sh && \
     chmod 755 /start.sh && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /build-files /etc/apt/apt.conf.d/11proxy
+    rm -rf /var/lib/apt/lists/* /build-files
 
 CMD ["/start.sh"]
 
