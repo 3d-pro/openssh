@@ -3,7 +3,6 @@ FROM 3dpro/base-debian:latest
 ADD build-files /build-files
 RUN apt-get update && \
     apt-get install --no-install-recommends -y openssh-server vim git && \
-    sed -i "/env_reset/a \Defaults        env_keep+=SSH_AUTH_SOCK" /etc/sudoers && \
     sed -i 's/required     pam_loginuid.so/optional     pam_loginuid.so/g' /etc/pam.d/sshd && \
     echo 'export LC_ALL=en_US.UTF-8' > /root/.bash_profile && \
     mkdir -p /var/run/sshd /root/.ssh && \
