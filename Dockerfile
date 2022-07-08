@@ -1,6 +1,6 @@
 FROM 3dpro/base-debian:latest
 
-ADD build-files /build-files
+COPY build-files /build-files
 RUN apt-get update && \
     apt-get install --no-install-recommends -y openssh-server vim git && \
     sed -i 's/required     pam_loginuid.so/optional     pam_loginuid.so/g' /etc/pam.d/sshd && \
